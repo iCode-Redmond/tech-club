@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Club at Medina Academy (Redmond) | iCode</title>
+<meta name="description" content="iCode Tech Club at Medina Academy, Redmond. After-school coding for grades 2-5, Tuesdays and Wednesdays 3:45-4:45 PM on campus. Register for one day or both.">
+<meta property="og:title" content="Tech Club at Medina Academy (Redmond)">
+<meta property="og:description" content="After-school coding for grades 2-5, Tuesdays and Wednesdays 3:45-4:45 PM on the Medina Academy campus in Redmond.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%A4%96</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Karla:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+</head>
+<body>
+<style>
+  :root {
+    --ink:        #14181A;
+    --ink-2:      #47514D;
+    --ink-3:      #6F7A76;
+    --ground:     #F7F8F7;
+    --surface:    #FFFFFF;
+    --line:       #E0E4E1;
+    --line-soft:  #ECEFEC;
+
+    --gray-club:      #5C6B65;
+    --gray-club-ink:  #46534E;
+    --gray-club-lift: #EDF0EE;
+
+    --orange-club:      #C9660F;
+    --orange-club-ink:  #A8540A;
+    --orange-club-lift: #FBF0E4;
+
+    --both:      #1B3B57;
+    --both-ink:  #14304A;
+    --both-lift: #E4EDF4;
+
+    --shadow: 0 1px 2px rgba(20,30,25,.05), 0 10px 26px -14px rgba(20,40,30,.22);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink:        #ECEFED;
+      --ink-2:      #B2BCB8;
+      --ink-3:      #87938E;
+      --ground:     #101413;
+      --surface:    #191F1D;
+      --line:       #2A322F;
+      --line-soft:  #222A27;
+
+      --gray-club:      #A3B0AA;
+      --gray-club-ink:  #B9C4BF;
+      --gray-club-lift: #232C29;
+
+      --orange-club:      #E88A33;
+      --orange-club-ink:  #F0A055;
+      --orange-club-lift: #2C2119;
+
+      --both:      #5FA3D6;
+      --both-ink:  #8FC2E6;
+      --both-lift: #17293A;
+
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 30px -16px rgba(0,0,0,.75);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink:        #ECEFED;
+    --ink-2:      #B2BCB8;
+    --ink-3:      #87938E;
+    --ground:     #101413;
+    --surface:    #191F1D;
+    --line:       #2A322F;
+    --line-soft:  #222A27;
+
+    --gray-club:      #A3B0AA;
+    --gray-club-ink:  #B9C4BF;
+    --gray-club-lift: #232C29;
+
+    --orange-club:      #E88A33;
+    --orange-club-ink:  #F0A055;
+    --orange-club-lift: #2C2119;
+
+    --both:      #5FA3D6;
+    --both-ink:  #8FC2E6;
+    --both-lift: #17293A;
+
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 30px -16px rgba(0,0,0,.75);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: Karla, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: Poppins, "Helvetica Neue", Arial, sans-serif; text-wrap: balance; margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--orange-club); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- hero: short, so the buttons sit high ---------- */
+  .hero { padding: 34px 0 24px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 12px;
+  }
+  h1 { font-size: clamp(28px, 4.4vw, 40px); font-weight: 700; line-height: 1.08; letter-spacing: -.02em; }
+  .lede { max-width: 58ch; margin: 12px 0 0; font-size: 17px; color: var(--ink-2); }
+  .facts {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; font-weight: 500; letter-spacing: .02em; color: var(--ink-2);
+  }
+  .facts span { border: 1px solid var(--line); border-radius: 3px; padding: 5px 9px; background: var(--surface); }
+
+  /* ---------- the three choices ---------- */
+  .picker { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; padding-bottom: 8px; }
+  .pick {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 7px;
+    box-shadow: var(--shadow); overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .pick .stripe { height: 6px; background: var(--accent); }
+  .pick-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .day {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px; font-weight: 600; letter-spacing: .11em; text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .pick h2 { font-size: 20px; font-weight: 600; letter-spacing: -.01em; line-height: 1.2; }
+  .pick .sub { font-size: 14.5px; color: var(--ink-3); margin: -4px 0 0; }
+  .money { display: flex; align-items: baseline; gap: 9px; margin-top: 4px; }
+  .price {
+    font-family: Poppins, sans-serif; font-size: 30px; font-weight: 700;
+    letter-spacing: -.025em; font-variant-numeric: tabular-nums;
+  }
+  .hours { font-size: 13.5px; color: var(--ink-3); }
+  .dates {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: .02em; color: var(--ink-3); margin: -4px 0 0;
+  }
+  .btn {
+    margin-top: auto; display: block; text-align: center; text-decoration: none;
+    font-family: Poppins, sans-serif; font-weight: 600; font-size: 15.5px;
+    padding: 13px 14px; border-radius: 5px;
+    background: var(--accent); color: #FFFFFF;
+    transition: filter .15s ease;
+  }
+  .btn:hover { filter: brightness(1.12); }
+  .save {
+    display: inline-block; align-self: flex-start;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    background: var(--accent-lift); color: var(--accent-ink);
+    padding: 4px 8px; border-radius: 3px;
+  }
+
+  /* both-days card: centre position, lifted, its own non-belt colour */
+  .pick.both {
+    border: 2px solid var(--both);
+    box-shadow: 0 2px 4px rgba(20,40,70,.08), 0 16px 34px -16px rgba(20,50,80,.34);
+  }
+  .pick.both .stripe { height: 6px; background: var(--both); }
+  .pick.both .btn { color: #FFFFFF; }
+  .flag {
+    position: absolute; top: 0; right: 0;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    background: var(--both); color: #FFFFFF; padding: 4px 10px; border-radius: 0 0 0 6px;
+  }
+  .pick.both { position: relative; }
+
+  /* ---------- club detail ---------- */
+  section { padding: 42px 0 0; }
+  .sec-head { margin-bottom: 20px; }
+  h3.sec { font-size: 22px; font-weight: 600; letter-spacing: -.015em; }
+  .sec-note { color: var(--ink-3); font-size: 15px; margin: 4px 0 0; }
+
+  .detail { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 30px; }
+  .club-detail { border-top: 3px solid var(--accent); padding-top: 16px; }
+  .club-detail h4 {
+    font-family: Poppins, sans-serif; font-size: 18px; font-weight: 600; margin: 0;
+    letter-spacing: -.01em;
+  }
+  .club-detail .who { font-size: 14px; color: var(--accent-ink); font-weight: 600; margin: 2px 0 10px; }
+  .club-detail p { margin: 0 0 12px; color: var(--ink-2); font-size: 16px; }
+  .points { margin: 0 0 12px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .points li {
+    display: grid; grid-template-columns: 14px 1fr; gap: 9px; align-items: start;
+    color: var(--ink-2); font-size: 16px; line-height: 1.45;
+  }
+  .points li::before { content: ""; width: 7px; height: 7px; margin-top: .5em; border-radius: 2px; background: var(--accent); }
+  .learn { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .learn li {
+    font-size: 12.5px; color: var(--ink-2);
+    border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; background: var(--surface);
+  }
+
+  /* ---------- included ---------- */
+  .inc-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 36px; }
+  .inc-grid div {
+    padding: 12px 0; border-bottom: 1px solid var(--line-soft);
+    font-size: 16px; color: var(--ink-2);
+    display: grid; grid-template-columns: 15px 1fr; gap: 9px; align-items: start;
+  }
+  .inc-grid div::before { content: "→"; color: var(--ink-3); font-size: 13px; line-height: 1.6; }
+
+  /* ---------- footer ---------- */
+  footer { margin-top: 44px; border-top: 1px solid var(--line); padding: 26px 0 52px; }
+  .contact { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; font-size: 15px; color: var(--ink-2); }
+  .contact a { color: var(--ink-2); }
+  .contact .sep { color: var(--line); }
+  .fine { margin: 18px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--ink-3); max-width: 80ch; }
+  .fine b { color: var(--ink-2); font-weight: 600; }
+
+  @media (max-width: 860px) {
+    .picker { grid-template-columns: 1fr; }
+    .detail { grid-template-columns: 1fr; gap: 26px; }
+    .inc-grid { grid-template-columns: 1fr; }
+    body { font-size: 16px; }
+    .hero { padding: 26px 0 20px; }
+    .btn { padding: 15px 14px; font-size: 16px; }
+    .pick-body { padding: 16px 18px 18px; }
+    section { padding-top: 34px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">iCode Tech Club · Medina Academy (Redmond)</p>
+    <h1>After-school coding, right after dismissal</h1>
+    <p class="lede">One hour a week on the Medina Academy campus in Redmond, 3:45–4:45 PM. Kids try the thing before they have to commit to it — and can change their mind as often as they like.</p>
+    <div class="facts">
+      <span>Grades 2–5</span>
+      <span>3:45–4:45 PM</span>
+      <span>Redmond campus</span>
+      <span>10 weeks</span>
+      <span>Laptop provided</span>
+    </div>
+  </header>
+
+  <div class="picker">
+
+    <article class="pick" style="--accent: var(--gray-club); --accent-ink: var(--gray-club-ink); --accent-lift: var(--gray-club-lift);">
+      <div class="stripe"></div>
+      <div class="pick-body">
+        <p class="day">Tuesdays</p>
+        <h2>Gray Tech Club</h2>
+        <p class="sub">Grades 2–5 · Minecraft &amp; Roblox</p>
+        <div class="money">
+          <span class="price">$380</span>
+          <span class="hours">1 hr/week × 10 weeks</span>
+        </div>
+        <p class="dates">Sep 14 – Nov 17, 2026</p>
+        <a class="btn" href="https://secure-portal.icodeschool.com/base/EmbeddedUrl/338D3DE830">Register for Tuesdays</a>
+      </div>
+    </article>
+
+    <article class="pick both" style="--accent: var(--both); --accent-ink: var(--both-ink); --accent-lift: var(--both-lift);">
+      <div class="stripe"></div>
+      <div class="pick-body">
+        <span class="flag">Best value</span>
+        <p class="day">Tuesdays + Wednesdays</p>
+        <h2>Both clubs</h2>
+        <p class="sub">Grades 3–5 · code and design</p>
+        <div class="money">
+          <span class="price">$700</span>
+          <span class="hours">2 hrs/week × 10 weeks</span>
+        </div>
+        <p class="dates">Sep 14 – Nov 18, 2026</p>
+        <a class="btn" href="https://secure-portal.icodeschool.com/base/EmbeddedUrl/9E3EAAAEA6">Register for both</a>
+      </div>
+    </article>
+
+    <article class="pick" style="--accent: var(--orange-club); --accent-ink: var(--orange-club-ink); --accent-lift: var(--orange-club-lift);">
+      <div class="stripe"></div>
+      <div class="pick-body">
+        <p class="day">Wednesdays</p>
+        <h2>Orange Tech Club</h2>
+        <p class="sub">Grades 3–5 · Websites &amp; design</p>
+        <div class="money">
+          <span class="price">$380</span>
+          <span class="hours">1 hr/week × 10 weeks</span>
+        </div>
+        <p class="dates">Sep 14 – Nov 18, 2026</p>
+        <a class="btn" href="https://secure-portal.icodeschool.com/base/EmbeddedUrl/EC014A42D3">Register for Wednesdays</a>
+      </div>
+    </article>
+
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h3 class="sec">Which one?</h3>
+      <p class="sec-note">Same hour, same campus — different half of making things.</p>
+    </div>
+
+    <div class="detail">
+
+      <div class="club-detail" style="--accent: var(--gray-club); --accent-ink: var(--gray-club-ink);">
+        <h4>Gray Tech Club</h4>
+        <p class="who">Tuesdays · Grades 2–5</p>
+        <ul class="points">
+          <li>They start in the worlds they already play in — modding Minecraft with block coding</li>
+          <li>Repeat loops, conditionals and Booleans, set in space</li>
+          <li>Code an agent to help animals, then debug it when it misbehaves</li>
+          <li>Good first club for a younger child, and no experience needed</li>
+        </ul>
+        <ul class="learn">
+          <li>Block coding</li>
+          <li>Loops &amp; conditionals</li>
+          <li>Booleans</li>
+          <li>Debugging</li>
+        </ul>
+      </div>
+
+      <div class="club-detail" style="--accent: var(--orange-club); --accent-ink: var(--orange-club-ink);">
+        <h4>Orange Tech Club</h4>
+        <p class="who">Wednesdays · Grades 3–5</p>
+        <ul class="points">
+          <li>The other half of making things — how it looks and who it's for</li>
+          <li>Build real web pages with HTML, CSS and JavaScript</li>
+          <li>Shoot and edit the photography that goes on them</li>
+          <li>Suits a child who likes drawing and arranging as much as building</li>
+        </ul>
+        <ul class="learn">
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <li>Design</li>
+          <li>Photography</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h3 class="sec">What's included</h3>
+    </div>
+    <div class="inc-grid">
+      <div><span>A laptop provided for every child</span></div>
+      <div><span>A printed workbook they keep</span></div>
+      <div><span>Background-checked instructors</span></div>
+      <div><span>Small groups, no experience needed</span></div>
+      <div><span>Ten one-hour sessions on campus</span></div>
+      <div><span>Minimum 4 students, or a full refund</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="contact">
+      <a href="tel:+14254054550">(425) 405-4550</a>
+      <span class="sep">|</span>
+      <a href="mailto:redmond@icodeschool.com">redmond@icodeschool.com</a>
+      <span class="sep">|</span>
+      <span>7405 168th Ave NE, Suite 120, Redmond WA 98052</span>
+    </div>
+    <p class="fine"><b>Dependent Care FSA:</b> many employer Dependent Care FSA plans reimburse after-school programs for children under 13, which can lower the real cost of the term. We provide itemized receipts with our EIN on request. Eligibility depends on your plan and your family's circumstances — check with your plan administrator before you enroll. iCode does not provide tax advice.</p>
+    <p class="fine">Registration is handled through the iCode secure portal. A term runs ten consecutive weeks; if fewer than four students enroll in a club, that club does not run and you are refunded in full.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
